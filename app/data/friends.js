@@ -42,3 +42,5 @@ var matches = [
     choices: [5, 5, 5, 4, 4, 5, 3, 5, 4, 1]
   }
 ];
+
+module.exports = matches;
