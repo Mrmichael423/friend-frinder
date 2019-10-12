@@ -210,7 +210,7 @@
 
 <script>
   $("#submit").on("click", function(event) {
-    alert("it works");
+    // alert("it works");
     event.preventDefault();
 
     var answers = {
@@ -233,5 +233,12 @@
         $("#question10").val()
       ]
     };
+    $.ajax("/api/friends", {
+      type: "POST",
+      data: answers
+    }).then(function() {
+      console.log("You have new answers");
+      location.reload();
+    });
   });
 </script>
