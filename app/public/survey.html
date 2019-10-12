@@ -25,6 +25,11 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
     <title>Survey</title>
   </head>
   <body>
@@ -52,6 +57,7 @@
               class="form-control"
               id="name"
               placeholder="(Required)"
+              required="required"
             />
           </div>
           <div class="form-group">
@@ -61,6 +67,7 @@
               class="form-control"
               id="pic"
               placeholder="Link to Profile Pic (Required)"
+              required="required"
             />
           </div>
           <div class="form-group">
@@ -76,7 +83,7 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="FormControl">You consider your self a loner</label>
+            <label for="FormControl">You consider yourself a loner</label>
             <select class="form-control" id="question2">
               <option>1</option>
               <option>2</option>
@@ -121,7 +128,7 @@
           </div>
           <div class="form-group">
             <label for="FormControl"
-              >You seam to always find yourself taking the lead</label
+              >You seem to always find yourself taking the lead</label
             >
             <select class="form-control" id="question6">
               <option>1</option>
@@ -142,7 +149,7 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="FormControl">Your are calm, cool and collected</label>
+            <label for="FormControl">You are calm, cool and collected</label>
             <select class="form-control" id="question8">
               <option>1</option>
               <option>2</option>
@@ -153,8 +160,7 @@
           </div>
           <div class="form-group">
             <label for="FormControl"
-              >You are go getter and are ready for anything and
-              everything</label
+              >You are a go-getter and are ready for any and everything</label
             >
             <select class="form-control" id="question9">
               <option>1</option>
@@ -176,7 +182,9 @@
               <option>5</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button id="submit" type="submit" class="btn btn-primary">
+            Submit
+          </button>
         </form>
         <div class="card-footer text-muted">
           Thank you for taking the survey!
@@ -191,9 +199,39 @@
             >Portfolio</a
           >
           <span>||</span>
+          <a href="https://github.com/Mrmichael423">Github</a>
+          <span>||</span>
           <a href="/">Home Page</a>
         </h6>
       </div>
     </footer>
   </body>
 </html>
+
+<script>
+  $("#submit").on("click", function(event) {
+    alert("it works");
+    event.preventDefault();
+
+    var answers = {
+      name: $("#name")
+        .val()
+        .trim(),
+      picture: $("#pic")
+        .val()
+        .trim(),
+      choices: [
+        $("#question1").val(),
+        $("#question2").val(),
+        $("#question3").val(),
+        $("#question4").val(),
+        $("#question5").val(),
+        $("#question6").val(),
+        $("#question7").val(),
+        $("#question8").val(),
+        $("#question9").val(),
+        $("#question10").val()
+      ]
+    };
+  });
+</script>

@@ -1,4 +1,4 @@
-var matches = [
+var friends = [
   {
     name: "Wolverine",
     photo:
@@ -43,4 +43,4 @@ var matches = [
   }
 ];
 
-module.exports = matches;
+module.exports = friends;
