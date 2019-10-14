@@ -1,3 +1,5 @@
+console.log("this loaded");
+
 $("#submit").on("click", function(event) {
   alert("it works");
   event.preventDefault();
