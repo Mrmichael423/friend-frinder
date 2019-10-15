@@ -1,0 +1,23 @@
+body {
+  background-image: url("https://d1ic4altzx8ueg.cloudfront.net/finder-us/wp-uploads/2018/01/superhero_450_250.png");
+}
+
+#main {
+  margin: 1%;
+  background: whitesmoke;
+}
+.jumbotron {
+  margin-top: 10%;
+}
+
+#info {
+  background: whitesmoke;
+}
+
+footer {
+  background: whitesmoke;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}

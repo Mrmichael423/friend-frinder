@@ -1,7 +1,5 @@
-console.log("this loaded");
-
 $("#submit").on("click", function(event) {
-  alert("it works");
+  // alert("it works");
   event.preventDefault();
 
   var answers = {
@@ -24,4 +22,24 @@ $("#submit").on("click", function(event) {
       $("#question10").val()
     ]
   };
+  $.ajax("/api/friends", {
+    type: "POST",
+    data: answers
+  }).then(function(response) {
+    $("#resName").text(response.name);
+    $("#resPic").attr("src", response.photo);
+    $("#myModal").modal("toggle");
+
+    $("#name").val("");
+    $("#pic").val("");
+    $("#question1").val(1);
+    $("#question2").val(1);
+    $("#question3").val(1);
+    $("#question5").val(1);
+    $("#question6").val(1);
+    $("#question7").val(1);
+    $("#question8").val(1);
+    $("#question9").val(1);
+    $("#question10").val(1);
+  });
 });
